@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom"
-import Doggo from "../assets/img/dog.png"
+// import Doggo from "../assets/img/dog.png"
 
 export default function PageSkeleton() {
     return (
@@ -22,7 +22,7 @@ export default function PageSkeleton() {
             <footer>
                 <div className="intro">
                     <p>
-                        <img src={Doggo} /> &copy;2022 Created with Love
+                        <img src="assets/img/dog.png" /> &copy;2022 Created with Love
                     </p>
                 </div>
             </footer>

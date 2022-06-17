@@ -1,15 +1,15 @@
 @charset "UTF-8";
 @font-face {
   font-family: "mindthecaps";
-  src: url(../fonts/mind_the_caps/MindTheCaps-DEMOVERSION.ttf);
+  src: url(../../public/assets/fonts/mind_the_caps/MindTheCaps-DEMOVERSION.ttf);
 }
 @font-face {
   font-family: "conthrax";
-  src: url(../fonts/conthrax/conthrax-sb.ttf);
+  src: url(../../public/assets/fonts/conthrax/conthrax-sb.ttf);
 }
 @font-face {
   font-family: "Roboto-Regular";
-  src: url(../fonts/Roboto/Roboto-Regular.ttf);
+  src: url(../../public/assets/fonts/Roboto/Roboto-Regular.ttf);
 }
 * {
   margin: 0;
@@ -31,7 +31,7 @@ img {
 }
 
 body {
-  background: linear-gradient(#0e1049, #075ca8);
+  background: linear-gradient(rgb(14, 16, 73), rgb(7, 92, 168));
 }
 
 .tempGrad::after {
@@ -69,7 +69,7 @@ body {
 }
 
 .wetter48h {
-  background: linear-gradient(#0e1049, #075ca8);
+  background: linear-gradient(rgb(14, 16, 73), rgb(7, 92, 168));
   overflow: auto;
   white-space: nowrap;
   margin: 0;
@@ -137,7 +137,7 @@ header .intro h1, header .intro h2 {
   font-family: "conthrax";
   text-align: center;
   color: #fff;
-  text-shadow: 0px 0px 8px #00ffea;
+  text-shadow: 0px 0px 8px rgb(0, 255, 234);
   margin-bottom: 1rem;
 }
 header .intro h1 {
@@ -185,7 +185,7 @@ footer .intro p img {
   font-size: clamp(5rem, 30vw, 7rem);
   font-weight: bold;
   text-align: center;
-  text-shadow: 0px 0px 8px #47b5ff;
+  text-shadow: 0px 0px 8px rgb(71, 181, 255);
 }
 .container02 .aktuellHTT {
   font-size: 2rem;
@@ -258,7 +258,7 @@ footer .intro p img {
 /* Kleine Endgeräte (Smartphones, kleiner als 480px) */
 @media (min-width: 481px) {
   body {
-    background: linear-gradient(#0e1049, #075ca8);
+    background: linear-gradient(rgb(14, 16, 73), rgb(7, 92, 168));
   }
 
   main {

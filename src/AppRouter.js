@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './assets/SASS/main.css';
+import './SASS/main.scss';
 import LandingPage from './Pages/LandingPage';
 import MainPage from './Pages/MainPage';
 import PageSkeleton from './Pages/PageSkeleton';
