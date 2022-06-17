@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'mindthecaps';
+    src: url(../fonts/mind_the_caps/MindTheCaps-DEMOVERSION.ttf);
+  }
+  @font-face {
+    font-family: 'conthrax';
+    src: url(../fonts/conthrax/conthrax-sb.ttf);
+  }
+  @font-face {
+    font-family: 'Roboto-Regular';
+    src: url(../fonts/Roboto/Roboto-Regular.ttf);
+  }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+}
+img{
+  width: 100%;
+}
+
+
