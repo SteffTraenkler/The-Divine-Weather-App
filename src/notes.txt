@@ -1,0 +1,1 @@
+There is a note for the Position stuff in hooks -> useGeolocation -> line: 40-41
