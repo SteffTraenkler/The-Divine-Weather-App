@@ -5,10 +5,18 @@ import { key } from "../api/key"
 
 export default function PageSkeleton() {
     const geolocationResult = useGeolocation()
-    const currentPosition = `lat=${geolocationResult.coordinates.lat}&lon=${geolocationResult.coordinates.lat}`
-    const [coordinates, setCoordinates] = useState(currentPosition)
+    const currentPosition = `lat=${geolocationResult.coordinates.lat}&lon=${geolocationResult.coordinates.lon}`
+    const [coordinates, setCoordinates] = useState("")
     const [lang, setLang] = useState('de')
     const [units, setUnits] = useState("metric")
+
+    useEffect(() => {
+        if (geolocationResult.loaded) {
+            setCoordinates(currentPosition)
+        }
+    }, [geolocationResult.loaded])
+
+    console.log(geolocationResult.loaded);
 
     const [data, setData] = useState([])
 
@@ -17,6 +25,7 @@ export default function PageSkeleton() {
 
     const url = `http://api.openweathermap.org/data/2.5/onecall?${coordinates}&appid=${key}&units=${units}&lang=${lang}`
 
+    console.log(url);
 
     useEffect(() => {
         fetch(url)
