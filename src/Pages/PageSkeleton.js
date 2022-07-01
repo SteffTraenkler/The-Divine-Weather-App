@@ -3,53 +3,22 @@ import { Outlet } from "react-router-dom"
 import useGeolocation from "../hooks/useGeolocation"
 import { key } from "../api/key"
 
-export default function PageSkeleton() {
-    const geolocationResult = useGeolocation()
-    const currentPosition = `lat=${geolocationResult.coordinates.lat}&lon=${geolocationResult.coordinates.lon}`
-    const [coordinates, setCoordinates] = useState("")
-    const [lang, setLang] = useState('de')
-    const [units, setUnits] = useState("metric")
+export default function PageSkeleton(props) {
 
-    useEffect(() => {
-        if (geolocationResult.loaded) {
-            setCoordinates(currentPosition)
-        }
-    }, [geolocationResult.loaded])
-
-    console.log(geolocationResult.loaded);
-
-    const [data, setData] = useState([])
-
-    // console.log("units", units);
-    // console.log("language", lang);
-
-    const url = `http://api.openweathermap.org/data/2.5/onecall?${coordinates}&appid=${key}&units=${units}&lang=${lang}`
-
-    console.log(url);
-
-    useEffect(() => {
-        fetch(url)
-            .then(resp => resp.json())
-            .then(weatherData => {
-                console.log(weatherData);
-                setData(weatherData)
-            })
-
-    }, [coordinates, units, lang])
-
+    console.log("PageSkel", props.data);
 
     return (
         <>
             <header>
                 <nav>
                     <form>
-                        <select value={lang} onChange={e => setLang(e.target.value)}>
+                        <select value={props.lang} onChange={e => props.setLang(e.target.value)}>
                             <option value={"de"}>DE</option>
                             <option value={"en"}>EN</option>
                         </select>
                     </form>
                     <form>
-                        <select value={units} onChange={e => setUnits(e.target.value)}>
+                        <select value={props.units} onChange={e => props.setUnits(e.target.value)}>
                             <option value={"metric"}>Celsius&meter/sec</option>
                             <option value={"imperial"}>Fahrenheit&miles/hour</option>
                         </select>
@@ -58,7 +27,7 @@ export default function PageSkeleton() {
             </header>
 
             <main>
-                <Outlet coordinates={coordinates} setCoordinates={setCoordinates} lang={lang} setLang={setLang} />
+                <Outlet />
             </main>
 
             <footer>
