@@ -10,11 +10,11 @@ export default function CurrentTempContainer(props) {
                 <img src={"assets/img/icons/editedWeatherIcons/" + props.data.current.weather[0].icon + ".png"} alt={props.data.current.weather[0].description} />
             </div>
 
-            <h2 className="aktuelleTemp tempGrad" id="aktuelleTemp">{props.data.current.temp}°</h2>
+            <h2 className="aktuelleTemp tempGrad" id="aktuelleTemp">{Math.round(props.data.current.temp)}°</h2>
 
             <div className="aktuellHTT">
-                <div className="aktuelleTT tempGrad" id="aktuelleTief">{props.data.daily[0].temp.min}</div>
-                <div className="aktuelleHT tempGrad" id="aktuelleHoch">{props.data.daily[0].temp.max}</div>
+                <div className="aktuelleTT tempGrad" id="aktuelleTief">{Math.round(props.data.daily[0].temp.min)}</div>
+                <div className="aktuelleHT tempGrad" id="aktuelleHoch">{Math.round(props.data.daily[0].temp.max)}</div>
             </div>
         </section>
     )

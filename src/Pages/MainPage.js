@@ -1,6 +1,7 @@
 // import { useCurrentLocation } from "../api/apifetches/CurrentLocation"
 import HourPrognosis48 from "../components/48-h-prognosis";
 import CurrentTempContainer from "../components/CurrentTempContainer"
+import DailyDetails from "../components/DailyDetails";
 import DailyPrognosis from "../components/DailyPrognosis";
 
 export default function MainPage(props) {
@@ -28,6 +29,8 @@ export default function MainPage(props) {
                     <HourPrognosis48 data={props.data} setData={props.setData} />
 
                     <DailyPrognosis data={props.data} setData={props.setData} />
+
+                    <DailyDetails data={props.data} setData={props.setData} />
                 </>
             }
         </>
