@@ -7,7 +7,7 @@ export default function CurrentTempContainer(props) {
             <h1 id="aktuelleStadt">Deine Stadt</h1>
             <div className="aktuellLogo">
                 {/* <img src={props.data.current.weather[0].icon} /> */}
-                <img src={"assets/img/icons/editedWeatherIcons/" + props.data.current.weather[0].icon + ".png"} alt="" />
+                <img src={"assets/img/icons/editedWeatherIcons/" + props.data.current.weather[0].icon + ".png"} alt={props.data.current.weather[0].description} />
             </div>
 
             <h2 className="aktuelleTemp tempGrad" id="aktuelleTemp">{props.data.current.temp}°</h2>
