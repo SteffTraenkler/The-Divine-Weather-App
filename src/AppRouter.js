@@ -53,11 +53,13 @@ function AppRouter() {
 
           <Route index element={<LandingPage
             coordinates={coordinates} setCoordinates={setCoordinates}
+            units={units}
             lang={lang} setLang={setLang}
             data={data} setData={setData}
           />} />
           <Route path="home" element={<MainPage
             coordinates={coordinates} setCoordinates={setCoordinates}
+            units={units}
             lang={lang} setLang={setLang}
             data={data} setData={setData}
           />} />

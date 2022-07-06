@@ -1,10 +1,10 @@
-export default function CurrentTempContainer(props) {
+export default function EngCurrentTempContainer(props) {
     console.log("component1", props.data);
     console.log("image", props.data.current.weather[0].icon);
 
     return (
         <section className="container02">
-            <h1 id="aktuelleStadt">Deine Stadt</h1>
+            <h1 id="aktuelleStadt">Your Location</h1>
             <div className="aktuellLogo">
                 {/* <img src={props.data.current.weather[0].icon} /> */}
                 <img src={"assets/img/icons/editedWeatherIcons/" + props.data.current.weather[0].icon + ".png"} alt={props.data.current.weather[0].description} />

@@ -1,8 +1,8 @@
-export default function HourPrognosis48(props) {
+export default function EngHourPrognosis48(props) {
 
     return (
         <section className="container03">
-            <div className="tagesPrognose">48 Stunden Prognose</div>
+            <div className="tagesPrognose">48 Hour Prognosis</div>
             <article className="wetter48h">
                 {props.data.hourly.map((weatherhourly, key) =>
                     <div className="StundenWetter" key={key}>
