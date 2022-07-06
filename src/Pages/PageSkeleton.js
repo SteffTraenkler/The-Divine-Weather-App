@@ -16,8 +16,10 @@ export default function PageSkeleton(props) {
                             <option value={"de"}>DE</option>
                             <option value={"en"}>EN</option>
                         </select>
-                    </form>
-                    <form>
+
+                        {/* INPUT  FELD noch mit Funktionen etc versehen -> Stadt auswählen */}
+                        <input />
+
                         <select value={props.units} onChange={e => props.setUnits(e.target.value)}>
                             <option value={"metric"}>Celsius&meter/sec</option>
                             <option value={"imperial"}>Fahrenheit&miles/hour</option>
