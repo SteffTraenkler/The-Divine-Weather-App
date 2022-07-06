@@ -13,7 +13,7 @@ export default function EngDailyDetails(props) {
                     "0" + new Date(props.data.current.sunset * 1000).getHours() : new Date(props.data.current.sunset * 1000).getHours()}
                     :{new Date(props.data.current.sunset * 1000).getMinutes() < 10 ?
                         "0" + new Date(props.data.current.sunset * 1000).getMinutes() : new Date(props.data.current.sunset * 1000).getMinutes()}</div>
-                <div className="dBox">Precipitation robability {Math.round(props.data.daily[0].pop * 100)} %</div>
+                <div className="dBox">Precipitation probability {Math.round(props.data.daily[0].pop * 100)} %</div>
                 <div className="dBox">Perceived temperature {Math.round(props.data.current.feels_like)} °{props.units === "metric" ? "C" : "F"}</div>
                 <div className="dBox">Humidity {props.data.daily[0].humidity} %</div>
                 {/* <div className="dBox">Sichtweite</div> */}
