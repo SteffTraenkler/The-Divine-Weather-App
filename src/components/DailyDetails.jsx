@@ -1,15 +1,23 @@
 export default function DailyDetails(props) {
+
     return (
-        <section class="container05">
-            <article class="details">
-                <div class="dBox">UV-Index: {props.data.daily[0].uvi}</div>
-                <div class="dBox">Sonnen unter aufgang</div>
-                <div class="dBox">Wind</div>
-                <div class="dBox">Regenmenge</div>
-                <div class="dBox">gefühlte Temperatur</div>
-                <div class="dBox">Feuchtigkeit</div>
-                <div class="dBox">Sichtweite</div>
-                <div class="dBox">Luftdruck</div>
+        <section className="container05">
+            <article className="details">
+                <div className="dBox">UV-Index: {props.data.daily[0].uvi.toString().replace(".", ",")}</div>
+                <div className="dBox">Windgeschwindigkeit {props.data.current.wind_speed.toString().replace(".", ",")} m/s</div>
+                <div className="dBox">Sonnenaufgang {new Date(props.data.current.sunrise * 1000).getHours() < 10 ?
+                    "0" + new Date(props.data.current.sunrise * 1000).getHours() : new Date(props.data.current.sunrise * 1000).getHours()}
+                    :{new Date(props.data.current.sunrise * 1000).getMinutes() < 10 ?
+                        "0" + new Date(props.data.current.sunrise * 1000).getMinutes() : new Date(props.data.current.sunrise * 1000).getMinutes()} Uhr</div>
+                <div className="dBox">Sonnenuntergang {new Date(props.data.current.sunset * 1000).getHours() < 10 ?
+                    "0" + new Date(props.data.current.sunset * 1000).getHours() : new Date(props.data.current.sunset * 1000).getHours()}
+                    :{new Date(props.data.current.sunset * 1000).getMinutes() < 10 ?
+                        "0" + new Date(props.data.current.sunset * 1000).getMinutes() : new Date(props.data.current.sunset * 1000).getMinutes()} Uhr</div>
+                <div className="dBox">Regenmenge {props.data.daily[0].pop * 100} %</div>
+                <div className="dBox">gefühlte Temperatur {Math.round(props.data.current.feels_like)} °</div>
+                <div className="dBox">Feuchtigkeit {props.data.daily[0].humidity} %</div>
+                {/* <div className="dBox">Sichtweite</div> */}
+                <div className="dBox">Luftdruck {props.data.daily[0].pressure} hPa</div>
             </article>
         </section>
     )
