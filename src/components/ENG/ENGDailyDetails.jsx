@@ -5,12 +5,16 @@ export default function EngDailyDetails(props) {
             <article className="details">
                 <div className="dBox">UV-Index: {props.data.daily[0].uvi.toString().replace(".", ",")}</div>
                 <div className="dBox">Wind speed {props.data.current.wind_speed.toString().replace(".", ",")} {props.units === "metric" ? "m/s" : "miles/h"}</div>
-                <div className="dBox">Sunrise {new Date(props.data.current.sunrise * 1000).getHours() < 10 ?
-                    "0" + new Date(props.data.current.sunrise * 1000).getHours() : new Date(props.data.current.sunrise * 1000).getHours()}
+                <div className="dBox">Sunrise
+                    <br />
+                    {new Date(props.data.current.sunrise * 1000).getHours() < 10 ?
+                        "0" + new Date(props.data.current.sunrise * 1000).getHours() : new Date(props.data.current.sunrise * 1000).getHours()}
                     :{new Date(props.data.current.sunrise * 1000).getMinutes() < 10 ?
                         "0" + new Date(props.data.current.sunrise * 1000).getMinutes() : new Date(props.data.current.sunrise * 1000).getMinutes()}</div>
-                <div className="dBox">Sunset {new Date(props.data.current.sunset * 1000).getHours() < 10 ?
-                    "0" + new Date(props.data.current.sunset * 1000).getHours() : new Date(props.data.current.sunset * 1000).getHours()}
+                <div className="dBox">Sunset
+                    <br />
+                    {new Date(props.data.current.sunset * 1000).getHours() < 10 ?
+                        "0" + new Date(props.data.current.sunset * 1000).getHours() : new Date(props.data.current.sunset * 1000).getHours()}
                     :{new Date(props.data.current.sunset * 1000).getMinutes() < 10 ?
                         "0" + new Date(props.data.current.sunset * 1000).getMinutes() : new Date(props.data.current.sunset * 1000).getMinutes()}</div>
                 <div className="dBox">Precipitation probability {Math.round(props.data.daily[0].pop * 100)} %</div>
